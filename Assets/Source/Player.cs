@@ -79,6 +79,13 @@ public class Player : MonoBehaviour
     // Called before physics calculations
     private void FixedUpdate()
     {
+        // Control player movement state
+        controlPlayerMovementState();
+    }
+
+    // Control player movement state
+    private void controlPlayerMovementState()
+    {
         // If the player is not rotating
         if (isRotating == false)
         {
@@ -98,7 +105,6 @@ public class Player : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 usedRotationSpeed = boostRotationSpeed;
-                print("Is Boosting");
             }
 
             // If the shift key is not pressed
@@ -106,7 +112,6 @@ public class Player : MonoBehaviour
             else
             {
                 usedRotationSpeed = rotationSpeed;
-                print("Is Not Boosting");
             }
 
             // If the current rotation orientation is clockwise
