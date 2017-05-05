@@ -190,8 +190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc6a3ff8fb43314aa28225bf9974125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 50
-  boostRotationSpeed: 100
+  rotationSpeed: 150
+  boostRotationSpeed: 200
   forwardMovementSpeed: 15
   isRotating: 1
 --- !u!135 &135851838936761098

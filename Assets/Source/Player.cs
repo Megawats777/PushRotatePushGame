@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum RotationOrientations
+public enum RotationDirections
 {
     Clockwise,
     CounterClockwise
@@ -19,8 +19,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float forwardMovementSpeed = 10.0f;
 
-    // The current rotation orientation
-    private RotationOrientations currentRotationOrientation = RotationOrientations.Clockwise;
+    // The current rotation direction
+    private RotationDirections currentRotationDirection = RotationDirections.Clockwise;
 
     // Is the player rotating
     [SerializeField]
@@ -43,8 +43,7 @@ public class Player : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update ()
-    {
-        
+    {  
 		// If the spacebar is pressed
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -52,19 +51,7 @@ public class Player : MonoBehaviour
             // Set the player to be rotating
             if (isRotating == false)
             {
-                isRotating = true;
-
-                /*
-                // If the current rotation orientation is clockwise
-                // Set the current rotation orientation to be counterclockwise
-                if (currentRotationOrientation == RotationOrientations.Clockwise)
-                    currentRotationOrientation = RotationOrientations.CounterClockwise;
-
-                // If the current rotation orientation is counterclockwise
-                // Set the current rotation orientation to be clockwise
-                else if (currentRotationOrientation == RotationOrientations.CounterClockwise)
-                    currentRotationOrientation = RotationOrientations.Clockwise;
-                    */
+                isRotating = true; 
             }
 
             // If the player is rotating
@@ -72,6 +59,17 @@ public class Player : MonoBehaviour
             else
             {
                 isRotating = false;
+            }
+        }
+
+        // If the W key is pressed
+        else if (Input.GetKeyDown(KeyCode.W))
+        {
+            // If the player is rotating
+            // Flip the current rotation direction
+            if (isRotating == true)
+            {
+                flipRotationDirection();
             }
         }
     }
@@ -91,13 +89,13 @@ public class Player : MonoBehaviour
         {
             // Move the player forward
             rb.isKinematic = false;
-            rb.AddForce(transform.up * forwardMovementSpeed);
+            rb.velocity = transform.up * forwardMovementSpeed;
         }
 
         // If the player is rotating
         else
         {
-            rb.isKinematic = true;
+            rb.velocity = Vector3.zero;
             float usedRotationSpeed = 0.0f;
 
             // If the shift key is pressed
@@ -114,20 +112,42 @@ public class Player : MonoBehaviour
                 usedRotationSpeed = rotationSpeed;
             }
 
-            // If the current rotation orientation is clockwise
-            if (currentRotationOrientation == RotationOrientations.Clockwise)
+            // If the current rotation direction is clockwise
+            if (currentRotationDirection == RotationDirections.Clockwise)
             {
                 // Rotate the player clockwise
                 transform.Rotate(transform.forward * -usedRotationSpeed * Time.deltaTime);
             }
 
-            // If the current rotation orientation is counterclockwise
-            else if (currentRotationOrientation == RotationOrientations.CounterClockwise)
+            // If the current rotation direction is counterclockwise
+            else if (currentRotationDirection == RotationDirections.CounterClockwise)
             {
                 // Rotate the player counterclockwise
                 transform.Rotate(transform.forward * usedRotationSpeed * Time.deltaTime);
             }
         }
+    }
+
+    // Flip rotation direction
+    private void flipRotationDirection()
+    {
+        // If the current rotation direction is clockwise
+        // Set the current rotation direction to be counterclockwise
+        if (currentRotationDirection == RotationDirections.Clockwise)
+        {
+            currentRotationDirection = RotationDirections.CounterClockwise;
+            print("Current rotation direction: " + currentRotationDirection.ToString());
+        }
+            
+
+        // If the current rotation direction is counterclockwise
+        // Set the current rotation direction to be clockwise
+        else if (currentRotationDirection == RotationDirections.CounterClockwise)
+        {
+            currentRotationDirection = RotationDirections.Clockwise;
+            print("Current rotation direction: " + currentRotationDirection.ToString());
+        }
+            
     }
 }
 
