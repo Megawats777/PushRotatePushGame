@@ -113,7 +113,7 @@ public class Player : MonoBehaviour
         {
             // Move the player forward
             rb.isKinematic = false;
-            rb.velocity = transform.up * forwardMovementSpeed;
+            rb.velocity = transform.forward * forwardMovementSpeed;
         }
 
         // If the player is rotating
@@ -140,14 +140,14 @@ public class Player : MonoBehaviour
             if (currentRotationDirection == RotationDirections.Clockwise)
             {
                 // Rotate the player clockwise
-                transform.Rotate(transform.forward * -usedRotationSpeed * Time.deltaTime);
+                transform.Rotate(transform.up * -usedRotationSpeed * Time.deltaTime);
             }
 
             // If the current rotation direction is counterclockwise
             else if (currentRotationDirection == RotationDirections.CounterClockwise)
             {
                 // Rotate the player counterclockwise
-                transform.Rotate(transform.forward * usedRotationSpeed * Time.deltaTime);
+                transform.Rotate(transform.up * usedRotationSpeed * Time.deltaTime);
             }
         }
     }

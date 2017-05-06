@@ -36,8 +36,8 @@ public class GameCamera : MonoBehaviour
     private void FixedUpdate()
     {
 
-        Vector3 cameraFollowPosition = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
-        // Always blend to the X and Y position of the player
-        transform.position = Vector3.SmoothDamp(transform.position, cameraFollowPosition, ref velocity, Time.deltaTime * timeToReachPlayerPosition);
+        Vector3 cameraFollowPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z - 20);
+        // Always blend to the X and Z position of the player
+        //transform.position = Vector3.SmoothDamp(transform.position, cameraFollowPosition, ref velocity, Time.deltaTime * timeToReachPlayerPosition);
     }
 }
