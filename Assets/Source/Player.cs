@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum RotationDirections
 {
@@ -26,6 +27,14 @@ public class Player : MonoBehaviour
     [SerializeField]
     private bool isRotating = true;
 
+    // The player's score
+    [Space(2.0f), SerializeField]
+    private int score = 0;
+
+    // The number of moves left
+    [SerializeField]
+    private int movesLeft = 5;
+
     // The respawn location of the player
     [HideInInspector]
     public Vector3 respawnLocation;
@@ -36,17 +45,25 @@ public class Player : MonoBehaviour
     // Component references
     private Rigidbody rb;
     private Renderer meshRenderer;
+    private LineRenderer lineRendererComp;
+
+    // External references
+    private GameManager gameManager;
 
     // Called before start
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         meshRenderer = GetComponent<Renderer>();
+        lineRendererComp = GetComponent<LineRenderer>();
+
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     // Use this for initialization
     void Start ()
     {
+        score = 0;
         respawnLocation = transform.position;
 	}
 	
@@ -64,6 +81,9 @@ public class Player : MonoBehaviour
                 if (isRotating == false)
                 {
                     isRotating = true;
+
+                    // End a move
+                    endMove();
                 }
 
                 // If the player is rotating
@@ -71,6 +91,9 @@ public class Player : MonoBehaviour
                 else
                 {
                     isRotating = false;
+
+                    // Start a move
+                    startMove();
                 }
             }
 
@@ -85,6 +108,12 @@ public class Player : MonoBehaviour
                 }
             }
         }
+      
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        
     }
 
     // Called before physics calculations
@@ -100,8 +129,15 @@ public class Player : MonoBehaviour
         // If the colliding object is a wall
         if (collision.transform.CompareTag("Wall"))
         {
-            // Respawn the player
-            StartCoroutine(respawnPlayer());
+            // End a move
+            endMove();
+
+            // If the number of moves left is greater than 0
+            if (getMovesLeft() > 0)
+            {
+                // Respawn the player
+                StartCoroutine(respawnPlayer());
+            }
         }
     }
 
@@ -179,8 +215,10 @@ public class Player : MonoBehaviour
     {
         // Disable the mesh renderer
         // Start rotating the player
+        // Hide the line renderer
         // Disable player input
         // Disable any child objects
+        lineRendererComp.enabled = false;
         meshRenderer.enabled = false;
         isInputEnabled = false;
         isRotating = true;
@@ -191,8 +229,10 @@ public class Player : MonoBehaviour
     {
         // Enable the mesh renderer
         // Start rotating the player
+        // Show the line renderer
         // Enable player input
         // Enable any child objects
+        lineRendererComp.enabled = true;
         meshRenderer.enabled = true;
         isInputEnabled = true;
         isRotating = true;
@@ -212,6 +252,55 @@ public class Player : MonoBehaviour
 
         // Enable the player
         enablePlayer();
+    }
+
+    // Increase the player score
+    public void increasePlayerScore(int scoreValue)
+    {
+        setScore(getScore() + scoreValue);
+    }
+
+    // Start a move
+    public void startMove()
+    {
+        // Decrease the amount of moves left
+        setMovesLeft(getMovesLeft() - 1);
+    }
+
+    // End a move
+    public void endMove()
+    {
+        // If the number of moves left equals 0
+        // Disable the player
+        // End the game
+        if (getMovesLeft() <= 0)
+        {
+            disablePlayer();
+            gameManager.endGame();
+            print("Game Over");
+        }
+    }
+
+    /*--Getters and Setters--*/
+
+    public int getScore()
+    {
+        return score;
+    }
+
+    public void setScore(int score)
+    {
+        this.score = score;
+    }
+
+    public int getMovesLeft()
+    {
+        return movesLeft;
+    }
+
+    public void setMovesLeft(int movesLeft)
+    {
+        this.movesLeft = movesLeft;
     }
 }
 

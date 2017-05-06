@@ -5,8 +5,17 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
 
-	// Use this for initialization
-	void Start ()
+    // External References
+    private Player playerRef;
+
+    // Called before start
+    private void Awake()
+    {
+        playerRef = FindObjectOfType<Player>();
+    }
+
+    // Use this for initialization
+    void Start ()
     {
 		
 	}
@@ -26,6 +35,8 @@ public class Target : MonoBehaviour
             // Add to the player's score
             // Destroy this target
             print("Target Destroyed");
+            playerRef.increasePlayerScore(10);
+            print("Player Score: " + playerRef.getScore());
             gameObject.SetActive(false);
         }
 
