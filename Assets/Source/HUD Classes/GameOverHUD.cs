@@ -10,6 +10,10 @@ public class GameOverHUD : GameHUDBase
     [Header("HUD Objects")]
     [SerializeField]
     private Text playerScoreText;
+    [SerializeField]
+    private Text highScoreText;
+    [SerializeField]
+    private Text newHighScoreMessageText;
 
     // External references
     private Player playerRef;
@@ -19,6 +23,7 @@ public class GameOverHUD : GameHUDBase
     {
         playerRef = FindObjectOfType<Player>();
         hudContentRoot.SetActive(false);
+        newHighScoreMessageText.enabled = false;
     }
 
     // Called every frame
@@ -40,5 +45,12 @@ public class GameOverHUD : GameHUDBase
     public override void updateHUDContent()
     {
         playerScoreText.text = "Your Score: " + playerRef.getScore();
+        highScoreText.text = "High Score: " + playerRef.getHighScore();
+    }
+
+    // Show the new high score message
+    public void showNewHighScoreMessage()
+    {
+        newHighScoreMessageText.enabled = true;
     }
 }

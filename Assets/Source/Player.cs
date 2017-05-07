@@ -31,6 +31,9 @@ public class Player : MonoBehaviour
     [Space(2.0f), SerializeField]
     private int score = 0;
 
+    // The player's high score
+    private int highScore = 0;
+
     // The number of moves left
     [SerializeField]
     private int movesLeft = 5;
@@ -49,6 +52,7 @@ public class Player : MonoBehaviour
 
     // External references
     private GameManager gameManager;
+    private GameOverHUD gameOverHUD;
 
     // Called before start
     private void Awake()
@@ -58,6 +62,7 @@ public class Player : MonoBehaviour
         lineRendererComp = GetComponent<LineRenderer>();
 
         gameManager = FindObjectOfType<GameManager>();
+        gameOverHUD = FindObjectOfType<GameOverHUD>();
     }
 
     // Use this for initialization
@@ -260,6 +265,26 @@ public class Player : MonoBehaviour
         setScore(getScore() + scoreValue);
     }
 
+    // Calculate high score
+    public void calculateHighScore()
+    {
+        // If the player's score is greater than the high score
+        if (didPlayerBeatHighScore())
+        {
+            // Set the high score to be the player's score
+            // Save the data
+            setHighScore(getScore());
+            gameOverHUD.showNewHighScoreMessage();
+            print("High Score: " + getHighScore());
+        }
+    }
+
+    // Did the player beat the high score
+    public bool didPlayerBeatHighScore()
+    {
+        return getScore() > getHighScore();
+    }
+
     // Start a move
     public void startMove()
     {
@@ -272,10 +297,12 @@ public class Player : MonoBehaviour
     {
         // If the number of moves left equals 0
         // Disable the player
+        // Calculate the high score
         // End the game
         if (getMovesLeft() <= 0)
         {
             disablePlayer();
+            calculateHighScore();
             gameManager.endGame();
             print("Game Over");
         }
@@ -301,6 +328,16 @@ public class Player : MonoBehaviour
     public void setMovesLeft(int movesLeft)
     {
         this.movesLeft = movesLeft;
+    }
+
+    public int getHighScore()
+    {
+        return highScore;
+    }
+
+    public void setHighScore(int highScore)
+    {
+        this.highScore = highScore;
     }
 }
 

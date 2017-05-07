@@ -11,6 +11,8 @@ public class MainHUD : GameHUDBase
     [SerializeField]
     private Text scoreText;
     [SerializeField]
+    private Text highScoreText;
+    [SerializeField]
     private Text movesLeftText;
 
     // External references
@@ -43,5 +45,6 @@ public class MainHUD : GameHUDBase
     {
         scoreText.text = "Score: " + playerRef.getScore();
         movesLeftText.text = "Moves Left: " + playerRef.getMovesLeft();
+        highScoreText.text = "High Score: " + playerRef.getHighScore();
     }
 }
