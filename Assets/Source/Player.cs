@@ -70,6 +70,10 @@ public class Player : MonoBehaviour
     {
         score = 0;
         respawnLocation = transform.position;
+
+        // Set the high score
+        setHighScore(SaveGameManager.loadLevelHighScore(SceneManager.GetActiveScene().name));
+        print(Application.persistentDataPath + "/" + SceneManager.GetActiveScene().name + "_LevelScore.SAVE");
 	}
 	
 	// Update is called once per frame
@@ -117,6 +121,12 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        else if (Input.GetKeyDown(KeyCode.P))
+        {
+            setHighScore(0);
+            SaveGameManager.saveLevelHighScore(SceneManager.GetActiveScene().name, getHighScore());
         }
         
     }
@@ -272,8 +282,9 @@ public class Player : MonoBehaviour
         if (didPlayerBeatHighScore())
         {
             // Set the high score to be the player's score
-            // Save the data
+            // Save the high score
             setHighScore(getScore());
+            SaveGameManager.saveLevelHighScore(SceneManager.GetActiveScene().name, getHighScore());
             gameOverHUD.showNewHighScoreMessage();
             print("High Score: " + getHighScore());
         }
