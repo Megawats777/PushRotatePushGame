@@ -109,10 +109,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc6a3ff8fb43314aa28225bf9974125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 20
-  boostRotationSpeed: 200
+  rotationSpeed: 5
+  boostRotationSpeed: 10
   forwardMovementSpeed: 10
   isRotating: 1
+  score: 0
+  movesLeft: 5
   respawnLocation: {x: 0, y: 0, z: 0}
 --- !u!120 &120017366293365500
 LineRenderer:

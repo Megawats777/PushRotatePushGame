@@ -187,6 +187,9 @@ public class Player : MonoBehaviour
                 usedRotationSpeed = rotationSpeed;
             }
 
+            transform.Rotate(transform.up * Input.GetAxis("Horizontal") * usedRotationSpeed);
+
+            /*
             // If the current rotation direction is clockwise
             if (currentRotationDirection == RotationDirections.Clockwise)
             {
@@ -200,6 +203,7 @@ public class Player : MonoBehaviour
                 // Rotate the player counterclockwise
                 transform.Rotate(transform.up * usedRotationSpeed * Time.deltaTime);
             }
+            */
         }
     }
 
