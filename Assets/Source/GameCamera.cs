@@ -8,9 +8,6 @@ public class GameCamera : MonoBehaviour
     [SerializeField]
     private float timeToReachPlayerPosition = 3.0f;
 
-    // The distance from the player
-    private float distanceFromPlayer;
-
     Vector3 velocity = Vector3.zero;
 
     // External References
@@ -26,9 +23,7 @@ public class GameCamera : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        // Set the distance from the player
-        distanceFromPlayer = transform.position.z - player.transform.position.z;
-        print(distanceFromPlayer);
+		
 	}
 	
 	// Update is called once per frame
@@ -41,17 +36,8 @@ public class GameCamera : MonoBehaviour
     private void FixedUpdate()
     {
 
+        Vector3 cameraFollowPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z - 20);
+        // Always blend to the X and Z position of the player
+        //transform.position = Vector3.SmoothDamp(transform.position, cameraFollowPosition, ref velocity, Time.deltaTime * timeToReachPlayerPosition);
     }
-
-    // Called after physics calculations
-    private void LateUpdate()
-    {
-        // Blend to the player's position
-        //Vector3 followPosition = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z + distanceFromPlayer);
-        //transform.position = Vector3.SmoothDamp(transform.position, followPosition, ref velocity, Time.deltaTime * timeToReachPlayerPosition);
-
-        // Blend to the player's rotation
-    }
-
-
 }
