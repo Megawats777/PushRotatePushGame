@@ -180,6 +180,13 @@ public class Player : MonoBehaviour
                 usedRotationSpeed = boostRotationSpeed;
             }
 
+            // If the S key is pressed
+            // Set the rotation speed to be 0
+            else if (Input.GetKey(KeyCode.S))
+            {
+                usedRotationSpeed = 0.0f;
+            }
+
             // If the shift key is not pressed
             // Use the regular rotation speed
             else
