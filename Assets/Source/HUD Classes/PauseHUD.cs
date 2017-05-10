@@ -5,18 +5,35 @@ using UnityEngine;
 
 public class PauseHUD : GameHUDBase
 {
+
+    // External references
+    private GameManager gameManager;
+
+    // Called before start
+    private void Awake()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+        hideHUD();
+    }
+
     public override void hideHUD()
     {
-        throw new NotImplementedException();
+        hudContentRoot.SetActive(false);
     }
 
     public override void showHUD()
     {
-        throw new NotImplementedException();
+        hudContentRoot.SetActive(true);
     }
 
     public override void updateHUDContent()
     {
-        throw new NotImplementedException();
+
+    }
+
+    // Resume game wrapper method
+    public void callGameManagerResumeGameMethod()
+    {
+        gameManager.resumeGame();
     }
 }

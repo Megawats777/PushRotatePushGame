@@ -111,8 +111,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 20
   boostRotationSpeed: 200
-  forwardMovementSpeed: 10
+  forwardMovementSpeed: 15
   isRotating: 1
+  score: 0
+  movesLeft: 5
   respawnLocation: {x: 0, y: 0, z: 0}
 --- !u!120 &120017366293365500
 LineRenderer:

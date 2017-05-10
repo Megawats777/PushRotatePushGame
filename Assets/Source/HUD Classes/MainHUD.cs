@@ -22,6 +22,7 @@ public class MainHUD : GameHUDBase
     private void Awake()
     {
         playerRef = FindObjectOfType<Player>();
+        hudContentRoot.SetActive(true);
     }
 
     // Called every frame

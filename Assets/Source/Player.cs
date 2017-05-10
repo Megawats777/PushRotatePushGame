@@ -3,12 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum RotationDirections
-{
-    Clockwise,
-    CounterClockwise
-}
-
 
 public class Player : MonoBehaviour
 {
@@ -114,6 +108,24 @@ public class Player : MonoBehaviour
                 if (isRotating == true)
                 {
                     flipRotationDirection();
+                }
+            }
+
+            // If the esacape key is pressed
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                // If the current game state is Active and is not Finished
+                // Pause the game
+                if (gameManager.currentGameStates == PossibleGameStates.Active && gameManager.currentGameStates != PossibleGameStates.Finished)
+                {
+                    gameManager.pauseGame();
+                }
+
+                // If the current game state is paused
+                // Resume the game
+                else if (gameManager.currentGameStates == PossibleGameStates.Paused)
+                { 
+                    gameManager.resumeGame();
                 }
             }
         }
