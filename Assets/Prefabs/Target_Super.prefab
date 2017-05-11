@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23407127679704816}
   - component: {fileID: 114275722835309550}
   m_Layer: 0
-  m_Name: Target
+  m_Name: Target_Super
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63fcc7fe4ffe8e9478adf84eb77d8435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 10
+  scoreValue: 50
 --- !u!114 &114362954487390996
 MonoBehaviour:
   m_ObjectHideFlags: 1
