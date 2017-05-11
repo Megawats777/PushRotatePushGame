@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
+    // The score value of the target
+    [SerializeField]
+    private int scoreValue = 10;
 
     // External References
     private Player playerRef;
@@ -35,7 +38,7 @@ public class Target : MonoBehaviour
             // Add to the player's score
             // Destroy this target
             print("Target Destroyed");
-            playerRef.increasePlayerScore(10);
+            playerRef.increasePlayerScore(scoreValue);
             print("Player Score: " + playerRef.getScore());
             gameObject.SetActive(false);
         }
