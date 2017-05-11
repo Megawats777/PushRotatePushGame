@@ -140,7 +140,9 @@ public class Player : MonoBehaviour
             setHighScore(0);
             SaveGameManager.saveLevelHighScore(SceneManager.GetActiveScene().name, getHighScore());
         }
+
         
+
     }
 
     // Called before physics calculations
@@ -148,6 +150,12 @@ public class Player : MonoBehaviour
     {
         // Control player movement state
         controlPlayerMovementState();
+    }
+
+    // Called after physics calculations
+    private void LateUpdate()
+    {
+        
     }
 
     // When this object collides with something
