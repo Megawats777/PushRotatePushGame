@@ -14,15 +14,16 @@ public class SaveGameManager : MonoBehaviour
         BinaryFormatter fileWriter = new BinaryFormatter();
         
         // Create an instance of the player data class
-        PlayerData playerData = new PlayerData(savedHighScore);
+        LevelData playerData = new LevelData();
 
         // Create the save file
         FileStream fileStream = new FileStream(Application.persistentDataPath + "/" + levelName + "_LevelScore.SAVE", FileMode.Create);
 
-        // Serialize the player data class
         // Set the saved high score
+        // Serialize the player data class
+        playerData.setSavedHighScore(savedHighScore);
         fileWriter.Serialize(fileStream, playerData);
-
+        
         // Stop writing to the save file
         fileStream.Close();
     }
@@ -39,7 +40,7 @@ public class SaveGameManager : MonoBehaviour
             FileStream fileStream = new FileStream(Application.persistentDataPath + "/" + levelName + "_LevelScore.SAVE", FileMode.Open);
 
             // Deserialize the file
-            PlayerData playerDataRef = (PlayerData) fileReader.Deserialize(fileStream);
+            LevelData playerDataRef = (LevelData) fileReader.Deserialize(fileStream);
 
             // Return the level high score
             int fileLevelScore = playerDataRef.getSavedHighScore();
@@ -57,18 +58,18 @@ public class SaveGameManager : MonoBehaviour
     }
 }
 
-// The player data class
-// Acts as a container for the player's data
+// The level data
+// Acts as a container for the level's data
 [Serializable]
-public class PlayerData
+public class LevelData
 {
     // The saved high score
     public int savedHighScore;
 
     // Constructor
-    public PlayerData(int savedLevelScore)
+    public LevelData()
     {
-        setSavedHighScore(savedLevelScore);
+       
     }
 
     /*--Getters and Setters--*/
