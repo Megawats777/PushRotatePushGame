@@ -37,6 +37,8 @@ public class ScalingObject : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        // Set the scaler lerp value based on the scale curve
+        // Get the value of the scale curve based on the curveTime variable
         scaleLerpValue = scaleCurve.Evaluate(curveTime);
         curveTime += Time.deltaTime * scaleSpeedMultiplier;
         curveTime = Mathf.Repeat(curveTime, 1.0f);
