@@ -28,6 +28,10 @@ public class ScalingObject : MonoBehaviour
     [SerializeField]
     private float curveTime = 0.0f;
 
+    // Is the scale animation looping
+    [SerializeField]
+    private bool isLooping = true;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -41,7 +45,14 @@ public class ScalingObject : MonoBehaviour
         // Get the value of the scale curve based on the curveTime variable
         scaleLerpValue = scaleCurve.Evaluate(curveTime);
         curveTime += Time.deltaTime * scaleSpeedMultiplier;
-        curveTime = Mathf.Repeat(curveTime, 1.0f);
+        curveTime = Mathf.Clamp(curveTime, 0.0f, 1.0f);
+
+        // If the scaling is looping
+        // Repeat the curve time value
+        if (isLooping == true)
+        {
+            curveTime = Mathf.Repeat(curveTime, 1.0f);
+        }
         
         // Blend between the two object scales based on the scale lerp value
         transform.localScale = Vector3.Lerp(minObjectScale, maxObjectScale, scaleLerpValue);

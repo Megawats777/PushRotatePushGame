@@ -114,8 +114,8 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1445599293073116}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -192,6 +192,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   curveTime: 0
+  isLooping: 1
 --- !u!114 &114275722835309550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -204,6 +205,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 10
+  popUpTextObject: {fileID: 114465853892629826, guid: 8f551c642880ad14f8d6fe8df8aed5ac,
+    type: 2}
 --- !u!114 &114362954487390996
 MonoBehaviour:
   m_ObjectHideFlags: 1

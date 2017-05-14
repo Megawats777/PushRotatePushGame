@@ -8,6 +8,10 @@ public class Target : MonoBehaviour
     [SerializeField]
     private int scoreValue = 10;
 
+    // Reference to the popup text prefab
+    [SerializeField]
+    private PopUpText popUpTextObject;
+
     // External References
     private Player playerRef;
 
@@ -35,14 +39,24 @@ public class Target : MonoBehaviour
         // If the overlaping object is the player
         if (other.CompareTag("Player"))
         {
-            // Add to the player's score
             // Destroy this target
-            print("Target Destroyed");
-            playerRef.increasePlayerScore(scoreValue);
-            print("Player Score: " + playerRef.getScore());
-            gameObject.SetActive(false);
+            destroyTarget();
         }
+    }
 
+    // Destroy this target
+    public virtual void destroyTarget()
+    {
+        // Add to the player's score
+        playerRef.increasePlayerScore(scoreValue);
+
+        // Spawn the popup text object
+        // Set the content of the popup text to be the score value of this target
+        Vector3 popUpTextSpawnPosition = new Vector3(transform.position.x, transform.position.y + 2.0f, transform.position.z);
+        PopUpText spawnedPopUpText = Instantiate(popUpTextObject, popUpTextSpawnPosition, Quaternion.identity);
+        spawnedPopUpText.setPopUpTextContent("+" + scoreValue);
+
+        gameObject.SetActive(false);
     }
 
 }
