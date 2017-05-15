@@ -14,7 +14,6 @@ public class PopUpText : MonoBehaviour
     // Called before start
     private void Awake()
     {
-        popUpTextComp = GetComponent<TextMeshPro>();
         gameCamera = FindObjectOfType<GameCamera>();
     }
 
@@ -37,6 +36,7 @@ public class PopUpText : MonoBehaviour
     // Set the content of the pop up text component
     public void setPopUpTextContent(string content)
     {
+        popUpTextComp = GetComponent<TextMeshPro>();
         popUpTextComp.text = content;
     }
 }

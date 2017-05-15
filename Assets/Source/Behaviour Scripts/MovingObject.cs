@@ -32,7 +32,7 @@ public class MovingObject : MonoBehaviour
 
         // Increase the current time of the speed curve
         currentSpeedCurveTime += Time.deltaTime * speedMultiplier;
-        currentSpeedCurveTime = Mathf.Clamp(currentSpeedCurveTime, 0.0f, speedCurve.keys[speedCurve.length - 1].value);
+        currentSpeedCurveTime = Mathf.Clamp(currentSpeedCurveTime, 0.0f, speedCurve.keys[speedCurve.length - 1].time);
 
         // Add to the object's position based on the used movement speed
         transform.Translate(transform.up * usedMovementSpeed * Time.deltaTime, Space.World);

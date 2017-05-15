@@ -10,13 +10,13 @@ public class Target : MonoBehaviour
 
     // Reference to the popup text prefab
     [SerializeField]
-    private PopUpText popUpTextObject;
+    protected PopUpText popUpTextObject;
 
     // External References
-    private Player playerRef;
+    protected Player playerRef;
 
     // Called before start
-    private void Awake()
+    protected void Awake()
     {
         playerRef = FindObjectOfType<Player>();
     }
@@ -55,6 +55,8 @@ public class Target : MonoBehaviour
         Vector3 popUpTextSpawnPosition = new Vector3(transform.position.x, transform.position.y + 2.0f, transform.position.z);
         PopUpText spawnedPopUpText = Instantiate(popUpTextObject, popUpTextSpawnPosition, Quaternion.identity);
         spawnedPopUpText.setPopUpTextContent("+" + scoreValue);
+
+        
 
         gameObject.SetActive(false);
     }
