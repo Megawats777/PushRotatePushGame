@@ -185,7 +185,7 @@ public class Player : MonoBehaviour
         if (isRotating == false)
         {
             // Move the player forward
-            rb.isKinematic = false;
+            //rb.isKinematic = false;
             //rb.velocity = transform.forward * forwardMovementSpeed;
 
             rb.AddForce(transform.forward * forwardMovementSpeed, ForceMode.VelocityChange);
@@ -194,7 +194,7 @@ public class Player : MonoBehaviour
         // If the player is rotating
         else
         {
-            rb.isKinematic = true;
+            //rb.isKinematic = true;
             float usedRotationSpeed = 0.0f;
 
             // If the shift key is pressed
