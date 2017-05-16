@@ -23,7 +23,7 @@ public class PopUpText : MonoBehaviour
         // Destroy the object after 20 seconds
         Destroy(gameObject, 20.0f);
 
-        transform.eulerAngles = new Vector3(40, 0.0f, 0.0f);
+        transform.eulerAngles = new Vector3(gameCamera.transform.eulerAngles.x, 0.0f, 0.0f);
 	}
 	
 	// Update is called once per frame
