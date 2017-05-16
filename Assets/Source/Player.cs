@@ -39,6 +39,14 @@ public class Player : MonoBehaviour
     // Is input enabled
     private bool isInputEnabled = true;
 
+
+    /*--Child Object References--*/
+    // The display mesh
+    [Header("Child Object References"),SerializeField]
+    private GameObject displayMesh;
+    [SerializeField]
+    private RotatingObject displayMeshRotatingObjectBehaviour;
+
     // Component references
     private Rigidbody rb;
     private Renderer meshRenderer;
@@ -68,7 +76,10 @@ public class Player : MonoBehaviour
         // Set the high score
         setHighScore(SaveGameManager.loadLevelHighScore(SceneManager.GetActiveScene().name));
         print(Application.persistentDataPath + "/" + SceneManager.GetActiveScene().name + "_LevelScore.SAVE");
-	}
+
+        // Set the rotation speed of the display mesh
+        displayMeshRotatingObjectBehaviour.setObjectRotationSpeed(forwardMovementSpeed, Axis.X);
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -86,6 +97,9 @@ public class Player : MonoBehaviour
                     rb.velocity = Vector3.zero;
                     isRotating = true;
 
+                    // Stop rotating the display mesh
+                    displayMeshRotatingObjectBehaviour.stopRotating();
+
                     // End a move
                     endMove();
                 }
@@ -94,8 +108,11 @@ public class Player : MonoBehaviour
                 // Set the player to not be rotating
                 else
                 {
-                    rb.velocity = Vector3.forward;
+                    rb.velocity = transform.forward;
                     isRotating = false;
+
+                    // Start rotating the display mesh
+                    displayMeshRotatingObjectBehaviour.startRotating();
 
                     // Start a move
                     startMove();
@@ -259,13 +276,14 @@ public class Player : MonoBehaviour
     // Disable the player
     public void disablePlayer()
     {
-        // Disable the mesh renderer
+        // Hide the display mesh
         // Start rotating the player
         // Hide the line renderer
         // Disable player input
         // Disable any child objects
+        displayMesh.SetActive(false);
+        displayMeshRotatingObjectBehaviour.stopRotating();
         lineRendererComp.enabled = false;
-        meshRenderer.enabled = false;
         isInputEnabled = false;
         isRotating = true;
     }
@@ -273,13 +291,13 @@ public class Player : MonoBehaviour
     // Enable the player
     public void enablePlayer()
     {
-        // Enable the mesh renderer
+        // Show the display mesh
         // Start rotating the player
         // Show the line renderer
         // Enable player input
-        // Enable any child objects
+        displayMesh.SetActive(true);
+        displayMeshRotatingObjectBehaviour.startRotating();
         lineRendererComp.enabled = true;
-        meshRenderer.enabled = true;
         isInputEnabled = true;
         isRotating = true;
     }

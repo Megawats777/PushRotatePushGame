@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 114362954487390996}
   - component: {fileID: 114179884173235504}
   m_Layer: 0
-  m_Name: SphereMesh
+  m_Name: DisplayMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -219,6 +219,8 @@ MonoBehaviour:
   scoreValue: 50
   popUpTextObject: {fileID: 114465853892629826, guid: 8f551c642880ad14f8d6fe8df8aed5ac,
     type: 2}
+  destroyedParticleEffect: {fileID: 1459126417911264, guid: 56f4baadadafd6240972ccb1fac635ea,
+    type: 2}
 --- !u!114 &114362954487390996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -233,6 +235,8 @@ MonoBehaviour:
   rotationSpeedXAxis: 0
   rotationSpeedYAxis: 50
   rotationSpeedZAxis: 0
+  rotatesOnStart: 1
+  isRotating: 1
 --- !u!135 &135910571247037826
 SphereCollider:
   m_ObjectHideFlags: 1

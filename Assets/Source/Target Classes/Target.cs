@@ -12,6 +12,10 @@ public class Target : MonoBehaviour
     [SerializeField]
     protected PopUpText popUpTextObject;
 
+    // The particle effect to spawn when this target is destroyed
+    [SerializeField]
+    protected GameObject destroyedParticleEffect;
+
     // External References
     protected Player playerRef;
 
@@ -56,7 +60,9 @@ public class Target : MonoBehaviour
         PopUpText spawnedPopUpText = Instantiate(popUpTextObject, popUpTextSpawnPosition, Quaternion.identity);
         spawnedPopUpText.setPopUpTextContent("+" + scoreValue);
 
-        
+        // Spawn the destroyed particle effect
+        GameObject spawnedParticleEffect = Instantiate(destroyedParticleEffect, transform.position, Quaternion.identity);
+        Destroy(spawnedParticleEffect, 20.0f);
 
         gameObject.SetActive(false);
     }

@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114205058076827620}
   - component: {fileID: 114084441345444972}
   m_Layer: 0
-  m_Name: SphereMesh
+  m_Name: DisplayMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,7 +69,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1902576330754340}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.59, y: 2, z: -9.17}
+  m_LocalPosition: {x: 9.2, y: 2, z: 11.07}
   m_LocalScale: {x: 2.1, y: 2.1, z: 2.1}
   m_Children:
   - {fileID: 4887292600447556}
@@ -177,10 +177,34 @@ MonoBehaviour:
       outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
+      time: 0.16372488
+      value: 0.78735286
+      inSlope: 2.8339028
+      outSlope: 2.8339028
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.27277893
+      value: 0.20867455
+      inSlope: 0.30517578
+      outSlope: 0.30517578
+      tangentMode: 0
+    - serializedVersion: 2
       time: 0.5
       value: 1
       inSlope: 0
       outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.64308333
+      value: 0.39776477
+      inSlope: -2.5689602
+      outSlope: -2.5689602
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.79548
+      value: 0.97628
+      inSlope: -1.5968084
+      outSlope: -1.5968084
       tangentMode: 0
     - serializedVersion: 2
       time: 1
@@ -207,6 +231,8 @@ MonoBehaviour:
   rotationSpeedXAxis: 0
   rotationSpeedYAxis: 50
   rotationSpeedZAxis: 0
+  rotatesOnStart: 1
+  isRotating: 1
 --- !u!114 &114428532231322156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,9 +247,9 @@ MonoBehaviour:
   scoreValue: 30
   popUpTextObject: {fileID: 114465853892629826, guid: 8f551c642880ad14f8d6fe8df8aed5ac,
     type: 2}
-  moveRefillAmount: 1
-  moveRefillPopUpText: {fileID: 114465853892629826, guid: 8f551c642880ad14f8d6fe8df8aed5ac,
+  destroyedParticleEffect: {fileID: 1459126417911264, guid: 56f4baadadafd6240972ccb1fac635ea,
     type: 2}
+  moveRefillAmount: 1
 --- !u!135 &135631525327787486
 SphereCollider:
   m_ObjectHideFlags: 1
