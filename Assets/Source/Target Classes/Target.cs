@@ -44,7 +44,7 @@ public class Target : MonoBehaviour
         }
     }
 
-    // Destroy this target
+    /// // Destroy this target 
     public virtual void destroyTarget()
     {
         // Add to the player's score

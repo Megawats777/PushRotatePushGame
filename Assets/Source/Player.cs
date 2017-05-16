@@ -83,6 +83,7 @@ public class Player : MonoBehaviour
                 // Set the player to be rotating
                 if (isRotating == false)
                 {
+                    rb.velocity = Vector3.zero;
                     isRotating = true;
 
                     // End a move
@@ -93,6 +94,7 @@ public class Player : MonoBehaviour
                 // Set the player to not be rotating
                 else
                 {
+                    rb.velocity = Vector3.forward;
                     isRotating = false;
 
                     // Start a move
@@ -184,7 +186,9 @@ public class Player : MonoBehaviour
         {
             // Move the player forward
             rb.isKinematic = false;
-            rb.velocity = transform.forward * forwardMovementSpeed;
+            //rb.velocity = transform.forward * forwardMovementSpeed;
+
+            rb.AddForce(transform.forward * forwardMovementSpeed, ForceMode.VelocityChange);
         }
 
         // If the player is rotating
