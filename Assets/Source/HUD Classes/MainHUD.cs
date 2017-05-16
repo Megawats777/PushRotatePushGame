@@ -14,6 +14,10 @@ public class MainHUD : GameHUDBase
     private Text highScoreText;
     [SerializeField]
     private Text movesLeftText;
+    [SerializeField]
+    private GameObject clockwiseMovementImage;
+    [SerializeField]
+    private GameObject counterClockwiseMovementImage;
 
     // External references
     private Player playerRef;
@@ -47,5 +51,18 @@ public class MainHUD : GameHUDBase
         scoreText.text = "Score: " + playerRef.getScore();
         movesLeftText.text = "Moves Left: " + playerRef.getMovesLeft();
         highScoreText.text = "High Score: " + playerRef.getHighScore();
+
+        // Depending on the player's current rotation direction
+        // Show the appropriate rotation image
+        if (playerRef.currentRotationDirection == RotationDirections.Clockwise)
+        {
+            clockwiseMovementImage.SetActive(true);
+            counterClockwiseMovementImage.SetActive(false);
+        }
+        else
+        {
+            counterClockwiseMovementImage.SetActive(true);
+            clockwiseMovementImage.SetActive(false);
+        }
     }
 }

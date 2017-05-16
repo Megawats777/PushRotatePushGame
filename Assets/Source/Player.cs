@@ -15,7 +15,8 @@ public class Player : MonoBehaviour
     private float forwardMovementSpeed = 10.0f;
 
     // The current rotation direction
-    private RotationDirections currentRotationDirection = RotationDirections.Clockwise;
+    [HideInInspector]
+    public RotationDirections currentRotationDirection = RotationDirections.Clockwise;
 
     // Is the player rotating
     [SerializeField]
@@ -239,14 +240,14 @@ public class Player : MonoBehaviour
             if (currentRotationDirection == RotationDirections.Clockwise)
             {
                 // Rotate the player clockwise
-                transform.Rotate(transform.up * -usedRotationSpeed * Time.deltaTime);
+                transform.Rotate(transform.up * usedRotationSpeed * Time.deltaTime);
             }
 
             // If the current rotation direction is counterclockwise
             else if (currentRotationDirection == RotationDirections.CounterClockwise)
             {
                 // Rotate the player counterclockwise
-                transform.Rotate(transform.up * usedRotationSpeed * Time.deltaTime);
+                transform.Rotate(transform.up * -usedRotationSpeed * Time.deltaTime);
             }
         }
     }
