@@ -29,6 +29,10 @@ public class Player : MonoBehaviour
     // The player's high score
     private int highScore = 0;
 
+    /*--Combo Properties--*/
+    [SerializeField]
+    private int comboSize = 0;
+
     // The number of moves left
     [SerializeField]
     private int movesLeft = 5;
@@ -47,6 +51,10 @@ public class Player : MonoBehaviour
     private GameObject displayMesh;
     [SerializeField]
     private RotatingObject displayMeshRotatingObjectBehaviour;
+
+    // A popup text object to spawn
+    [Header("Objects to Spawn"), SerializeField]
+    private PopUpText popUpTextObject;
 
     // Component references
     private Rigidbody rb;
@@ -346,6 +354,38 @@ public class Player : MonoBehaviour
         return getScore() > getHighScore();
     }
 
+    // Increase combo size
+    public void increaseComboSize()
+    {
+        setComboSize(getComboSize() + 1);
+    }
+
+    // End the combo
+    public void endCombo()
+    {
+        // If the size of the combo is greater than 1
+        if (getComboSize() > 1)
+        {
+            // The score from the combo
+            int comboScore = getComboSize() * 10;
+
+            // Add the combo score to the player's score
+            increasePlayerScore(comboScore);
+
+            print("Combo Size: " + comboSize);
+            print("Combo Bonus: " + comboScore);
+
+            // Spawn a pop up text object
+            // Set the content of the pop up text
+            Vector3 popUpTextSpawnLocation = new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z);
+            PopUpText spawnedPopUpText = Instantiate(popUpTextObject, popUpTextSpawnLocation, Quaternion.identity);
+            spawnedPopUpText.setPopUpTextContent("+" + comboScore + " Combo Bonus");
+
+            // Reset the combo size to 0
+            setComboSize(0);
+        }
+    }
+
     // Start a move
     public void startMove()
     {
@@ -356,6 +396,9 @@ public class Player : MonoBehaviour
     // End a move
     public void endMove()
     {
+        // End any existing combos
+        endCombo();
+
         // If the number of moves left equals 0
         // Disable the player
         // Calculate the high score
@@ -399,6 +442,16 @@ public class Player : MonoBehaviour
     public void setHighScore(int highScore)
     {
         this.highScore = highScore;
+    }
+
+    public int getComboSize()
+    {
+        return comboSize;
+    }
+
+    public void setComboSize(int comboSize)
+    {
+        this.comboSize = comboSize;
     }
 }
 

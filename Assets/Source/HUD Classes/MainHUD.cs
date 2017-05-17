@@ -19,7 +19,7 @@ public class MainHUD : GameHUDBase
     [SerializeField]
     private GameObject counterClockwiseMovementImage;
     [SerializeField]
-    private GameObject finalMoveNotifyText;
+    private Text moveNotifyText;
     [SerializeField]
     private GameObject highScoreBeatenNotifyText;
 
@@ -71,13 +71,19 @@ public class MainHUD : GameHUDBase
 
         // If the player only has one move left
         // Show the final move text object
-        if (playerRef.getMovesLeft() <= 1)
+        if (playerRef.getMovesLeft() == 1)
         {
-            finalMoveNotifyText.SetActive(true);
+            moveNotifyText.text = "Final Move";
+            moveNotifyText.gameObject.SetActive(true);
+        }
+        else if (playerRef.getMovesLeft() == 0)
+        {
+            moveNotifyText.text = "No Moves Left";
+            moveNotifyText.gameObject.SetActive(true);
         }
         else
         {
-            finalMoveNotifyText.SetActive(false);
+            moveNotifyText.gameObject.SetActive(false);
         }
 
         // If the player has beaten the high score

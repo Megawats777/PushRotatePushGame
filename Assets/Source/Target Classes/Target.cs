@@ -52,7 +52,10 @@ public class Target : MonoBehaviour
     public virtual void destroyTarget()
     {
         // Add to the player's score
+        // Increase the player's combo
         playerRef.increasePlayerScore(scoreValue);
+        playerRef.increaseComboSize();
+
 
         // Spawn the popup text object
         // Set the content of the popup text to be the score value of this target

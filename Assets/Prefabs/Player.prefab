@@ -158,12 +158,16 @@ MonoBehaviour:
   rotationSpeed: 20
   boostRotationSpeed: 200
   forwardMovementSpeed: 3.5
+  currentRotationDirection: 0
   isRotating: 1
   score: 0
+  comboSize: 0
   movesLeft: 5
   respawnLocation: {x: 0, y: 0, z: 0}
   displayMesh: {fileID: 1202496471323386}
   displayMeshRotatingObjectBehaviour: {fileID: 114129785649746944}
+  popUpTextObject: {fileID: 114465853892629826, guid: e9be6b179fc633e4b9c4618387a3f00f,
+    type: 2}
 --- !u!120 &120017366293365500
 LineRenderer:
   m_ObjectHideFlags: 1
