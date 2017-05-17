@@ -18,6 +18,10 @@ public class MainHUD : GameHUDBase
     private GameObject clockwiseMovementImage;
     [SerializeField]
     private GameObject counterClockwiseMovementImage;
+    [SerializeField]
+    private GameObject finalMoveNotifyText;
+    [SerializeField]
+    private GameObject highScoreBeatenNotifyText;
 
     // External references
     private Player playerRef;
@@ -63,6 +67,28 @@ public class MainHUD : GameHUDBase
         {
             counterClockwiseMovementImage.SetActive(true);
             clockwiseMovementImage.SetActive(false);
+        }
+
+        // If the player only has one move left
+        // Show the final move text object
+        if (playerRef.getMovesLeft() <= 1)
+        {
+            finalMoveNotifyText.SetActive(true);
+        }
+        else
+        {
+            finalMoveNotifyText.SetActive(false);
+        }
+
+        // If the player has beaten the high score
+        // Show the high score notify object
+        if (playerRef.getScore() > playerRef.getHighScore())
+        {
+            highScoreBeatenNotifyText.SetActive(true);
+        }
+        else if (playerRef.getScore() <= playerRef.getHighScore())
+        {
+            highScoreBeatenNotifyText.SetActive(false);
         }
     }
 }

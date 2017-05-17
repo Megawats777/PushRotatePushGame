@@ -24,7 +24,15 @@ public class RotatingObject : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-		
+        // Determine if the object rotates on start
+        if (rotatesOnStart)
+        {
+            isRotating = true;
+        }
+        else
+        {
+            isRotating = false;
+        }
 	}
 	
 	// Update is called once per frame
