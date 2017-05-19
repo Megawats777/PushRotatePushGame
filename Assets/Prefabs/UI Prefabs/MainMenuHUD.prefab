@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 222191389307876992}
   - component: {fileID: 114314283412610376}
   - component: {fileID: 114473751848603750}
+  - component: {fileID: 114482623848749082}
   m_Layer: 5
   m_Name: StageButton_01
   m_TagString: Untagged
@@ -1308,6 +1309,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114482623848749082
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1009992721559676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8219b572386ca2348bb8583113fd52f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attatchedScene: Scene_TestLevel_01
+  highScoreText: {fileID: 114501240882559712}
 --- !u!114 &114486679490963258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2163,8 +2177,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000012397766}
-  m_SizeDelta: {x: 0, y: 900}
+  m_AnchoredPosition: {x: 0, y: -0.000014781952}
+  m_SizeDelta: {x: -0.5, y: 900}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224085254702267622
 RectTransform:
@@ -2560,8 +2574,8 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -10, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224502996451485848
