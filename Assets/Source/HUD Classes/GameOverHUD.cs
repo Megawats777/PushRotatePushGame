@@ -44,8 +44,8 @@ public class GameOverHUD : GameHUDBase
 
     public override void updateHUDContent()
     {
-        playerScoreText.text = "Your Score: " + playerRef.getScore();
-        highScoreText.text = "High Score: " + playerRef.getHighScore();
+        playerScoreText.text = playerRef.getScore().ToString();
+        highScoreText.text = playerRef.getHighScore().ToString();
     }
 
     // Show the new high score message
