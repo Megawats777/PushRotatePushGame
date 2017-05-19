@@ -11,13 +11,14 @@ public class StageButton : MonoBehaviour
     // HUD Objects
     [SerializeField]
     private Text highScoreText;
+    private Button button;
 
 	// Use this for initialization
 	void Start ()
     {
         // Set the content of the high score text object
         highScoreText.text = SaveGameManager.loadLevelHighScore(attatchedScene).ToString();
-	}
+    }
 	
 	// Update is called once per frame
 	void Update ()
