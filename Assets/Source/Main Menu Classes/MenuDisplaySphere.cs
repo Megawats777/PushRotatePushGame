@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class MenuDisplaySphere : MonoBehaviour
 {
-
-
+    // A list of possible player skin materials
+    [SerializeField]
+    private Material[] playerSkinMaterials;
 
     // Component references
     private Renderer meshRenderer;
@@ -28,4 +29,13 @@ public class MenuDisplaySphere : MonoBehaviour
     {
 		
 	}
+
+    // Set the player skin of this menu display sphere
+    public void setPlayerSkin(int selectionNum)
+    {
+        meshRenderer.material = playerSkinMaterials[selectionNum];
+
+        // Set the selected player skin
+        PersistentDataHolder.setSelectedPlayerSkin(playerSkinMaterials[selectionNum]);
+    }
 }

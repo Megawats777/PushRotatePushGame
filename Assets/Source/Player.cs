@@ -51,6 +51,10 @@ public class Player : MonoBehaviour
     private GameObject displayMesh;
     [SerializeField]
     private RotatingObject displayMeshRotatingObjectBehaviour;
+    [SerializeField]
+    private Renderer displayMeshRenderer;
+    [SerializeField]
+    private Material defaultMaterial;
 
     // A popup text object to spawn
     [Header("Objects to Spawn"), SerializeField]
@@ -88,6 +92,16 @@ public class Player : MonoBehaviour
 
         // Set the rotation speed of the display mesh
         displayMeshRotatingObjectBehaviour.setObjectRotationSpeed(forwardMovementSpeed, Axis.X);
+
+        // Set the skin of the player
+        if (PersistentDataHolder.getSelectedPlayerSkin() != null)
+        {
+            displayMeshRenderer.material = PersistentDataHolder.getSelectedPlayerSkin();
+        }
+        else
+        {
+            displayMeshRenderer.material = defaultMaterial;
+        }
     }
 	
 	// Update is called once per frame
