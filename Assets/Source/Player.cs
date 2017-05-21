@@ -102,6 +102,8 @@ public class Player : MonoBehaviour
         {
             displayMeshRenderer.material = defaultMaterial;
         }
+
+        rb.velocity = Vector3.up * -2;
     }
 	
 	// Update is called once per frame
@@ -131,7 +133,6 @@ public class Player : MonoBehaviour
                 // Set the player to not be rotating
                 else
                 {
-                    rb.velocity = transform.forward;
                     isRotating = false;
 
                     // Start rotating the display mesh
@@ -203,8 +204,8 @@ public class Player : MonoBehaviour
     // When this object collides with something
     private void OnCollisionEnter(Collision collision)
     {
-        // If the colliding object is a wall
-        if (collision.transform.CompareTag("Wall"))
+        // If the colliding object is a wall pr a boundary floor
+        if (collision.transform.CompareTag("Wall") || collision.transform.CompareTag("BoundaryFloor"))
         {
             // End a move
             endMove();
