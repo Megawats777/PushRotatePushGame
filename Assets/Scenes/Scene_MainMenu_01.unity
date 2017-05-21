@@ -188,14 +188,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1254047328740388, guid: 0688bb2b933d9b1418a0642b3100425d, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1269374755498174, guid: 0688bb2b933d9b1418a0642b3100425d, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0688bb2b933d9b1418a0642b3100425d, type: 2}
   m_IsPrefabParent: 0
@@ -356,7 +348,7 @@ GameObject:
   - component: {fileID: 1603426131}
   - component: {fileID: 1603426135}
   m_Layer: 0
-  m_Name: DisplaySphere
+  m_Name: MenuDisplaySphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -375,7 +367,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5a80c2e83e1bde645b330811cbafd2ca, type: 2}
+  - {fileID: 2100000, guid: e972ccd7fe29af84c967abc2104cdd75, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
