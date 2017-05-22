@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
 
     // Is the player rotating
     [SerializeField]
-    private bool isRotating = true;
+    public bool isRotating = true;
 
     // The player's score
     [Space(2.0f), SerializeField]
@@ -305,6 +305,7 @@ public class Player : MonoBehaviour
         // Hide the line renderer
         // Disable player input
         // Disable any child objects
+        rb.isKinematic = true;
         displayMesh.SetActive(false);
         displayMeshRotatingObjectBehaviour.stopRotating();
         lineRendererComp.enabled = false;
@@ -319,6 +320,7 @@ public class Player : MonoBehaviour
         // Start rotating the player
         // Show the line renderer
         // Enable player input
+        rb.isKinematic = false;
         displayMesh.SetActive(true);
         displayMeshRotatingObjectBehaviour.startRotating();
         lineRendererComp.enabled = true;

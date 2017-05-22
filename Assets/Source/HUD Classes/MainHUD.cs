@@ -22,6 +22,8 @@ public class MainHUD : GameHUDBase
     private Text moveNotifyText;
     [SerializeField]
     private GameObject highScoreBeatenNotifyText;
+    [SerializeField]
+    private Text moveControlText;
 
     // External references
     private Player playerRef;
@@ -52,9 +54,9 @@ public class MainHUD : GameHUDBase
 
     public override void updateHUDContent()
     {
-        scoreText.text = "Score: " + playerRef.getScore();
-        movesLeftText.text = "Moves Left: " + playerRef.getMovesLeft();
-        highScoreText.text = "High Score: " + playerRef.getHighScore();
+        scoreText.text = playerRef.getScore().ToString();
+        movesLeftText.text = playerRef.getMovesLeft().ToString();
+        highScoreText.text = playerRef.getHighScore().ToString();
 
         // Depending on the player's current rotation direction
         // Show the appropriate rotation image
@@ -95,6 +97,17 @@ public class MainHUD : GameHUDBase
         else if (playerRef.getScore() <= playerRef.getHighScore())
         {
             highScoreBeatenNotifyText.SetActive(false);
+        }
+
+        // Set the content of the move control text object
+        // Based on if the player is rotating or not
+        if (playerRef.isRotating)
+        {
+            moveControlText.text = "Spacebar: Move";
+        }
+        else
+        {
+            moveControlText.text = "Spacebar: Stop";
         }
     }
 }
