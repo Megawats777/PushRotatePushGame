@@ -328,7 +328,7 @@ MonoBehaviour:
   scoreValue: 30
   popUpTextObject: {fileID: 114465853892629826, guid: 8f551c642880ad14f8d6fe8df8aed5ac,
     type: 2}
-  destroyedParticleEffect: {fileID: 1459126417911264, guid: 56f4baadadafd6240972ccb1fac635ea,
+  destroyedParticleEffect: {fileID: 1459126417911264, guid: 45a0d79327e0c2346b6ad78665702058,
     type: 2}
   destroyedSound: {fileID: 8300000, guid: 9de752cd0c7642d4b845e9605748bde2, type: 3}
   childDisplayMesh: {fileID: 1212907175602934}
