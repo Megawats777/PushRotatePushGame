@@ -16,19 +16,36 @@ public class Target : MonoBehaviour
     [SerializeField]
     protected GameObject destroyedParticleEffect;
 
+    // The destroyed sound of the target
+    [SerializeField]
+    private AudioClip destroyedSound;
+
     // External References
     protected Player playerRef;
+
+    // Component references
+    private AudioSource targetAudioSource;
+    private Renderer mainMeshRenderer;
+    private Collider scoreTrigger;
+
+    // Child object references
+    [SerializeField]
+    private GameObject childDisplayMesh;
 
     // Called before start
     protected void Awake()
     {
+        targetAudioSource = GetComponent<AudioSource>();
         playerRef = FindObjectOfType<Player>();
+
+        mainMeshRenderer = GetComponent<Renderer>();
+        scoreTrigger = GetComponent<Collider>();
     }
 
     // Use this for initialization
-    void Start ()
+    protected void Start ()
     {
-		
+        targetAudioSource.clip = destroyedSound;
 	}
 	
 	// Update is called once per frame
@@ -43,6 +60,9 @@ public class Target : MonoBehaviour
         // If the overlaping object is the player
         if (other.CompareTag("Player"))
         {
+            // Play a sound
+            targetAudioSource.Play();
+
             // Destroy this target
             destroyTarget();
         }
@@ -67,7 +87,16 @@ public class Target : MonoBehaviour
         GameObject spawnedParticleEffect = Instantiate(destroyedParticleEffect, transform.position, Quaternion.identity);
         Destroy(spawnedParticleEffect, 20.0f);
 
-        gameObject.SetActive(false);
+        // Hide this object
+        hideObject();
+    }
+
+    // Hide this object
+    public void hideObject()
+    {
+        mainMeshRenderer.enabled = false;
+        childDisplayMesh.SetActive(false);
+        scoreTrigger.enabled = false;
     }
 
 }

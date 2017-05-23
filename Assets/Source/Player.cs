@@ -60,10 +60,17 @@ public class Player : MonoBehaviour
     [Header("Objects to Spawn"), SerializeField]
     private PopUpText popUpTextObject;
 
+    // Movement audio clips
+    [Header("Movement Audio Clips"), SerializeField]
+    private AudioClip startMoveAudioClip;
+    [SerializeField]
+    private AudioClip endMoveAudioClip;
+
     // Component references
     private Rigidbody rb;
     private Renderer meshRenderer;
     private LineRenderer lineRendererComp;
+    private AudioSource movementAudioSource;
 
     // External references
     private GameManager gameManager;
@@ -75,6 +82,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         meshRenderer = GetComponent<Renderer>();
         lineRendererComp = GetComponent<LineRenderer>();
+        movementAudioSource = GetComponent<AudioSource>();
 
         gameManager = FindObjectOfType<GameManager>();
         gameOverHUD = FindObjectOfType<GameOverHUD>();
@@ -406,6 +414,10 @@ public class Player : MonoBehaviour
     // Start a move
     public void startMove()
     {
+        // Play a sound
+        movementAudioSource.clip = startMoveAudioClip;
+        movementAudioSource.Play();
+
         // Decrease the amount of moves left
         setMovesLeft(getMovesLeft() - 1);
     }
@@ -413,6 +425,10 @@ public class Player : MonoBehaviour
     // End a move
     public void endMove()
     {
+        // Play a sound
+        movementAudioSource.clip = endMoveAudioClip;
+        movementAudioSource.Play();
+
         // End any existing combos
         endCombo();
 
