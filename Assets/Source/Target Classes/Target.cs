@@ -85,7 +85,7 @@ public class Target : MonoBehaviour
 
         // Spawn the destroyed particle effect
         GameObject spawnedParticleEffect = Instantiate(destroyedParticleEffect, transform.position, Quaternion.identity);
-        Destroy(spawnedParticleEffect, 20.0f);
+        //Destroy(spawnedParticleEffect, 20.0f);
 
         // Hide this object
         hideObject();
