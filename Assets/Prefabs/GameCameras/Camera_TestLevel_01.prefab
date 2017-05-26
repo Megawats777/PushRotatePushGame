@@ -241,14 +241,14 @@ MonoBehaviour:
     neutralWhiteLevel: 5.3
     neutralWhiteClip: 10
   m_ColorGrading:
-    enabled: 0
+    enabled: 1
     precision: 16
     colorWheels:
       shadows: {r: 1, g: 1, b: 1, a: 1}
-      midtones: {r: 1, g: 1, b: 1, a: 1}
+      midtones: {r: 1, g: 0.9999, b: 0.9999, a: 1}
       highlights: {r: 1, g: 1, b: 1, a: 1}
     basics:
-      temperatureShift: 0
+      temperatureShift: -0.47
       tint: 0
       hue: 0
       saturation: 1
