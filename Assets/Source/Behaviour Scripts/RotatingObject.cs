@@ -59,18 +59,18 @@ public class RotatingObject : MonoBehaviour
     }
 
     // Set object rotation speed
-    public void setObjectRotationSpeed(float speed, Axis chosenAxis)
+    public void setObjectRotationSpeed(float speed, AxisSelector chosenAxis)
     {
         // Depending on the chosen axis set the new rotation speed on the appropriate axis
-        if (chosenAxis == Axis.X)
+        if (chosenAxis == AxisSelector.X)
         {
             rotationSpeedXAxis = speed;
         }
-        else if (chosenAxis == Axis.Y)
+        else if (chosenAxis == AxisSelector.Y)
         {
             rotationSpeedYAxis = speed;
         }
-        else if (chosenAxis == Axis.Z)
+        else if (chosenAxis == AxisSelector.Z)
         {
             rotationSpeedZAxis = speed;
         }

@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
         print(Application.persistentDataPath + "/" + SceneManager.GetActiveScene().name + "_LevelScore.SAVE");
 
         // Set the rotation speed of the display mesh
-        displayMeshRotatingObjectBehaviour.setObjectRotationSpeed(forwardMovementSpeed, Axis.X);
+        displayMeshRotatingObjectBehaviour.setObjectRotationSpeed(forwardMovementSpeed, AxisSelector.X);
 
         // Set the skin of the player
         if (PersistentDataHolder.getSelectedPlayerSkin() != null)
