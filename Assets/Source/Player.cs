@@ -55,6 +55,8 @@ public class Player : MonoBehaviour
     private Renderer displayMeshRenderer;
     [SerializeField]
     private Material defaultMaterial;
+    [SerializeField]
+    private GameObject laserMesh;
 
     // A popup text object to spawn
     [Header("Objects to Spawn"), SerializeField]
@@ -167,14 +169,14 @@ public class Player : MonoBehaviour
             {
                 // If the current game state is Active and is not Finished
                 // Pause the game
-                if (gameManager.currentGameStates == PossibleGameStates.Active && gameManager.currentGameStates != PossibleGameStates.Finished)
+                if (gameManager.currentGameState == PossibleGameStates.Active && gameManager.currentGameState != PossibleGameStates.Finished)
                 {
                     gameManager.pauseGame();
                 }
 
                 // If the current game state is paused
                 // Resume the game
-                else if (gameManager.currentGameStates == PossibleGameStates.Paused)
+                else if (gameManager.currentGameState == PossibleGameStates.Paused)
                 { 
                     gameManager.resumeGame();
                 }
@@ -315,8 +317,9 @@ public class Player : MonoBehaviour
         // Disable any child objects
         rb.isKinematic = true;
         displayMesh.SetActive(false);
+        laserMesh.SetActive(false);
         displayMeshRotatingObjectBehaviour.stopRotating();
-        lineRendererComp.enabled = false;
+        //lineRendererComp.enabled = false;
         isInputEnabled = false;
         isRotating = true;
     }
@@ -330,8 +333,9 @@ public class Player : MonoBehaviour
         // Enable player input
         rb.isKinematic = false;
         displayMesh.SetActive(true);
+        laserMesh.SetActive(true);
         displayMeshRotatingObjectBehaviour.startRotating();
-        lineRendererComp.enabled = true;
+        //lineRendererComp.enabled = true;
         isInputEnabled = true;
         isRotating = true;
     }

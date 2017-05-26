@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     // The current game state
-    public PossibleGameStates currentGameStates = PossibleGameStates.Active;
+    public PossibleGameStates currentGameState = PossibleGameStates.Active;
 
     // External references
     private MainHUD mainHUDRef;
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     public void endGame()
     {
         print("Game Finished");
-        currentGameStates = PossibleGameStates.Finished;
+        currentGameState = PossibleGameStates.Finished;
         mainHUDRef.hideHUD();
         gameOverHUDRef.showHUD();
     }
@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0.0f;
         print("Game Paused");
-        currentGameStates = PossibleGameStates.Paused;
+        currentGameState = PossibleGameStates.Paused;
         mainHUDRef.hideHUD();
         pauseHUDRef.showHUD();
     }
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         print("Game Resumed");
-        currentGameStates = PossibleGameStates.Active;
+        currentGameState = PossibleGameStates.Active;
         pauseHUDRef.hideHUD();
         mainHUDRef.showHUD();
     }

@@ -569,6 +569,7 @@ GameObject:
   - component: {fileID: 224346072247812268}
   - component: {fileID: 222079580093922752}
   - component: {fileID: 114052321810715218}
+  - component: {fileID: 114327159201730784}
   m_Layer: 5
   m_Name: ClockwiseMovementImage
   m_TagString: Untagged
@@ -620,6 +621,7 @@ GameObject:
   - component: {fileID: 224504881974734740}
   - component: {fileID: 222070710951693178}
   - component: {fileID: 114266607802056570}
+  - component: {fileID: 114016379835750784}
   m_Layer: 5
   m_Name: CounterClockwiseMovementImage
   m_TagString: Untagged
@@ -880,6 +882,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114016379835750784
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1742574286681288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!114 &114026089979833096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1494,6 +1510,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New High Score!
+--- !u!114 &114327159201730784
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1713384552737676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!114 &114401880773285216
 MonoBehaviour:
   m_ObjectHideFlags: 1
