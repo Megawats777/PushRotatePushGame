@@ -1500,7 +1500,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: TestLevel_01
+  m_Text: Constrasting Pillars
 --- !u!114 &114070144289450934
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1736,7 +1736,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f6b31155bf176bd4491e3c3da6deb570, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2365,7 +2365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8219b572386ca2348bb8583113fd52f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attatchedScene: Scene_TestLevel_01
+  attatchedScene: Scene_GameStage_02
   highScoreText: {fileID: 114667243118702686}
 --- !u!114 &114477175079749266
 MonoBehaviour:
@@ -2616,7 +2616,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Scene_TestLevel_01
+          m_StringArgument: Scene_GameStage_02
           m_BoolArgument: 0
         m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,

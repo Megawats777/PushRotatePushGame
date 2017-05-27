@@ -109,10 +109,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings:
-    threshold: 0.9
+    threshold: 1
     softKnee: 0.5
-    radius: 2
-    intensity: 0.7
+    radius: 4.9
+    intensity: 3.5
     highQuality: 1
     antiFlicker: 0
     dirtTexture: {fileID: 0}
@@ -169,14 +169,14 @@ MonoBehaviour:
     neutralWhiteLevel: 5.3
     neutralWhiteClip: 10
   m_ColorGrading:
-    enabled: 0
+    enabled: 1
     precision: 16
     colorWheels:
       shadows: {r: 1, g: 1, b: 1, a: 1}
       midtones: {r: 1, g: 1, b: 1, a: 1}
       highlights: {r: 1, g: 1, b: 1, a: 1}
     basics:
-      temperatureShift: 0
+      temperatureShift: 0.7
       tint: 0
       hue: 0
       saturation: 1
@@ -209,7 +209,7 @@ MonoBehaviour:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
       red:
         serializedVersion: 2
         m_Curve:
@@ -227,7 +227,7 @@ MonoBehaviour:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
       green:
         serializedVersion: 2
         m_Curve:
@@ -245,7 +245,7 @@ MonoBehaviour:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
       blue:
         serializedVersion: 2
         m_Curve:
@@ -263,7 +263,7 @@ MonoBehaviour:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
     useDithering: 0
     showDebug: 0
   m_Lut:
@@ -295,7 +295,7 @@ MonoBehaviour:
     nearPlane: -0.020005226
     nearFalloff: 15
     farPlane: 0.08000183
-    farFalloff: 13.11
+    farFalloff: 5.4
     nearBlurRadius: 15
     farBlurRadius: 0
   bokehTexture:
@@ -330,13 +330,13 @@ MonoBehaviour:
     amountY: 1
     scale: 1
   vignette:
-    enabled: 0
-    color: {r: 0, g: 0, b: 0, a: 1}
+    enabled: 1
+    color: {r: 0.6691177, g: 0.4324156, b: 0.13283955, a: 1}
     center: {x: 0.5, y: 0.5}
-    intensity: 1.4
+    intensity: 1.15
     smoothness: 0.8
     roundness: 1
-    blur: 0
+    blur: 0.32
     desaturate: 0
   chromaticAberration:
     enabled: 0
@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings:
-    intensity: 1
+    intensity: 3
     radius: 0.3
     sampleCount: 2
     sampleCountValue: 24

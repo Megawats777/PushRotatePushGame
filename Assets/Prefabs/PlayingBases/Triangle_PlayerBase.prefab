@@ -22,12 +22,13 @@ GameObject:
   - component: {fileID: 33574039429154282}
   - component: {fileID: 23272014518834510}
   - component: {fileID: 95708305357629750}
+  - component: {fileID: 64906063435122290}
   m_Layer: 0
   m_Name: Triangle_PlayerBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 64
   m_IsActive: 1
 --- !u!4 &4798991776945342
 Transform:
@@ -35,13 +36,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1789442129631336}
-  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -0.00000080578, y: 0, z: -0.02}
-  m_LocalScale: {x: 2.6, y: 4, z: 1}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: -0.5}
+  m_LocalPosition: {x: 0.00000081053, y: 0, z: 0.062206}
+  m_LocalScale: {x: 2.403842, y: 3.1500974, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 270, z: 0}
 --- !u!23 &23272014518834510
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -55,7 +56,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 71f92c7030e298f45b5ecb73ee16c2af, type: 2}
+  - {fileID: 2100000, guid: 8821aac7fa8c8e34a82bf0a9da1445a4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,6 +80,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1789442129631336}
+  m_Mesh: {fileID: 4300000, guid: bb4179bbf622edb428ceda7619a6ec45, type: 3}
+--- !u!64 &64906063435122290
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1789442129631336}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: bb4179bbf622edb428ceda7619a6ec45, type: 3}
 --- !u!95 &95708305357629750
 Animator:
