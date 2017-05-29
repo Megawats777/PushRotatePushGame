@@ -369,7 +369,7 @@ MonoBehaviour:
     intensity: 1
     smoothness: 0.6
     roundness: 1
-    blur: 0.3
+    blur: 0.1
     desaturate: 0
   chromaticAberration:
     enabled: 1

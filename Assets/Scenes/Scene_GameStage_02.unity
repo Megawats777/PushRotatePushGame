@@ -4422,16 +4422,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114517850586185604, guid: e3be4503dd16f104d9bb8224e484c0f8,
-        type: 2}
-      propertyPath: vignette.blur
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 114517850586185604, guid: e3be4503dd16f104d9bb8224e484c0f8,
-        type: 2}
-      propertyPath: vignette.enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3be4503dd16f104d9bb8224e484c0f8, type: 2}
   m_IsPrefabParent: 0

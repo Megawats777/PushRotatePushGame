@@ -115,7 +115,7 @@ MonoBehaviour:
     intensity: 3.5
     highQuality: 1
     antiFlicker: 0
-    dirtTexture: {fileID: 0}
+    dirtTexture: {fileID: 2800000, guid: a2960ffde020f27409e070d92fb2e00b, type: 3}
     dirtIntensity: 2.5
   m_Shader: {fileID: 4800000, guid: e45d4f28262b04d10a075856ab5fdb5e, type: 3}
 --- !u!114 &114126467218011846
@@ -336,7 +336,7 @@ MonoBehaviour:
     intensity: 1.15
     smoothness: 0.8
     roundness: 1
-    blur: 0.32
+    blur: 0.15
     desaturate: 0
   chromaticAberration:
     enabled: 0
