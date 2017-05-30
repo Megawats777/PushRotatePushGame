@@ -1017,7 +1017,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: dc86e8c24a1ecb843a70c64ada7a0700, type: 2}
+  - {fileID: 2100000, guid: b6b68d8287bac154fbc3826b70f46b10, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2771,7 +2771,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b6b68d8287bac154fbc3826b70f46b10, type: 2}
+  - {fileID: 2100000, guid: dc86e8c24a1ecb843a70c64ada7a0700, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2966,18 +2966,18 @@ MonoBehaviour:
     amountY: 1
     scale: 1
   vignette:
-    enabled: 0
-    color: {r: 0, g: 0, b: 0, a: 1}
+    enabled: 1
+    color: {r: 0.3897059, g: 0.25560123, b: 0.054444212, a: 1}
     center: {x: 0.5, y: 0.5}
-    intensity: 1.4
+    intensity: 1.42
     smoothness: 0.8
     roundness: 1
-    blur: 0
+    blur: 0.5
     desaturate: 0
   chromaticAberration:
-    enabled: 0
+    enabled: 1
     color: {r: 0, g: 1, b: 0, a: 1}
-    amount: 0
+    amount: 1.5
   m_Shader: {fileID: 4800000, guid: 136ab50fe2b9ad64d9c22adc3668abb7, type: 3}
 --- !u!114 &1675303356
 MonoBehaviour:
@@ -2991,8 +2991,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings:
-    intensity: 1
-    radius: 0.3
+    intensity: 2.3
+    radius: 0.35
     sampleCount: 2
     sampleCountValue: 24
     downsampling: 0
@@ -3052,14 +3052,14 @@ MonoBehaviour:
     neutralWhiteLevel: 5.3
     neutralWhiteClip: 10
   m_ColorGrading:
-    enabled: 0
+    enabled: 1
     precision: 16
     colorWheels:
       shadows: {r: 1, g: 1, b: 1, a: 1}
       midtones: {r: 1, g: 1, b: 1, a: 1}
-      highlights: {r: 1, g: 1, b: 1, a: 1}
+      highlights: {r: 0.9191347, g: 1, b: 0.38397664, a: 1}
     basics:
-      temperatureShift: 0
+      temperatureShift: 0.6
       tint: 0
       hue: 0
       saturation: 1
@@ -3092,7 +3092,7 @@ MonoBehaviour:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
       red:
         serializedVersion: 2
         m_Curve:
@@ -3110,7 +3110,7 @@ MonoBehaviour:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
       green:
         serializedVersion: 2
         m_Curve:
@@ -3128,7 +3128,7 @@ MonoBehaviour:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
       blue:
         serializedVersion: 2
         m_Curve:
@@ -3146,7 +3146,7 @@ MonoBehaviour:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
     useDithering: 0
     showDebug: 0
   m_Lut:
@@ -3173,14 +3173,14 @@ MonoBehaviour:
     apertureOrientation: 0
   focus:
     transform: {fileID: 0}
-    focusPlane: 1.25
-    range: -2.5
+    focusPlane: 3.0349998
+    range: 1.0699997
     nearPlane: 2.5
     nearFalloff: 15
-    farPlane: 0
+    farPlane: 3.5699997
     farFalloff: 50
     nearBlurRadius: 15
-    farBlurRadius: 20.8
+    farBlurRadius: 31
   bokehTexture:
     texture: {fileID: 0}
     scale: 1
@@ -3205,13 +3205,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings:
-    threshold: 0.9
+    threshold: 0.95
     softKnee: 0.5
     radius: 2
-    intensity: 0.7
+    intensity: 2.9
     highQuality: 1
     antiFlicker: 0
-    dirtTexture: {fileID: 0}
+    dirtTexture: {fileID: 2800000, guid: a2960ffde020f27409e070d92fb2e00b, type: 3}
     dirtIntensity: 2.5
   m_Shader: {fileID: 4800000, guid: e45d4f28262b04d10a075856ab5fdb5e, type: 3}
 --- !u!1 &1740410270
@@ -3334,6 +3334,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114767198377173778, guid: 588cccb1e8ffd494f88cdce36dfc2b92,
+        type: 2}
+      propertyPath: playerSkinMaterials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 624ed00d82f1a254cbe385f581fb3523, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 588cccb1e8ffd494f88cdce36dfc2b92, type: 2}
   m_IsPrefabParent: 0
