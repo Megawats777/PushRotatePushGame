@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 50
-  popUpTextObject: {fileID: 114465853892629826, guid: 8f551c642880ad14f8d6fe8df8aed5ac,
+  popUpTextObject: {fileID: 114756752533874264, guid: 0a5f66dc19f9a8044b337cf33c5b85b1,
     type: 2}
   destroyedParticleEffect: {fileID: 1459126417911264, guid: 56f4baadadafd6240972ccb1fac635ea,
     type: 2}

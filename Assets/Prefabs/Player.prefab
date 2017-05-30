@@ -319,7 +319,7 @@ MonoBehaviour:
   displayMeshRenderer: {fileID: 23945920711007558}
   defaultMaterial: {fileID: 2100000, guid: 624ed00d82f1a254cbe385f581fb3523, type: 2}
   laserMesh: {fileID: 1436825738308570}
-  popUpTextObject: {fileID: 114465853892629826, guid: e9be6b179fc633e4b9c4618387a3f00f,
+  popUpTextObject: {fileID: 114988832535589496, guid: 3fe08162f3e1ddc499962f782a6b88fd,
     type: 2}
   startMoveAudioClip: {fileID: 8300000, guid: 45dd760e7266b434688409fe32085836, type: 3}
   endMoveAudioClip: {fileID: 8300000, guid: 3013e4b40cca35e4bba684c7e35c1c45, type: 3}

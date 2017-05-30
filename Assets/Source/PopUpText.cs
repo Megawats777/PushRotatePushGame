@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class PopUpText : MonoBehaviour
 {
-    // Reference to the textmesh component
-    private TextMeshPro popUpTextComp;
+    // Reference to the text component
+    [SerializeField]
+    private Text textComp;
 
     // External References
     private GameCamera gameCamera;
@@ -23,7 +24,10 @@ public class PopUpText : MonoBehaviour
         // Destroy the object after 20 seconds
         Destroy(gameObject, 20.0f);
 
-        transform.eulerAngles = new Vector3(gameCamera.transform.eulerAngles.x, 0.0f, 0.0f);
+        if (gameCamera)
+        {
+            transform.eulerAngles = new Vector3(gameCamera.transform.eulerAngles.x, 0.0f, 0.0f);
+        }
 	}
 	
 	// Update is called once per frame
@@ -36,7 +40,6 @@ public class PopUpText : MonoBehaviour
     // Set the content of the pop up text component
     public void setPopUpTextContent(string content)
     {
-        popUpTextComp = GetComponent<TextMeshPro>();
-        popUpTextComp.text = content;
+        textComp.text = content;
     }
 }
