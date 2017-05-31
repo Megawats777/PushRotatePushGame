@@ -189,12 +189,7 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 223269589632246886, guid: 0688bb2b933d9b1418a0642b3100425d,
-        type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 1706441190}
-    - target: {fileID: 114871608005090328, guid: 0688bb2b933d9b1418a0642b3100425d,
+    - target: {fileID: 114595349872013304, guid: 0688bb2b933d9b1418a0642b3100425d,
         type: 2}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -204,19 +199,16 @@ Prefab:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1814837777}
-    - target: {fileID: 114595349872013304, guid: 0688bb2b933d9b1418a0642b3100425d,
+    - target: {fileID: 114871608005090328, guid: 0688bb2b933d9b1418a0642b3100425d,
         type: 2}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1814837777}
-    - target: {fileID: 1254047328740388, guid: 0688bb2b933d9b1418a0642b3100425d, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1433892567344330, guid: 0688bb2b933d9b1418a0642b3100425d, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 223269589632246886, guid: 0688bb2b933d9b1418a0642b3100425d,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1706441190}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0688bb2b933d9b1418a0642b3100425d, type: 2}
   m_IsPrefabParent: 0
@@ -680,7 +672,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4971593720560630, guid: f7cbe05dc377abe4085baa746a46274d, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7cbe05dc377abe4085baa746a46274d, type: 2}
@@ -1282,7 +1274,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &889858920
 GameObject:
@@ -1759,11 +1751,6 @@ Prefab:
     - target: {fileID: 4834955642139702, guid: 17bd3273f24806f41949fa92f2d8373b, type: 2}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114665730859020792, guid: 17bd3273f24806f41949fa92f2d8373b,
-        type: 2}
-      propertyPath: bokehTexture.texture
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 17bd3273f24806f41949fa92f2d8373b, type: 2}
