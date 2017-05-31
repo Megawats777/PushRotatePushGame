@@ -914,6 +914,7 @@ GameObject:
   - component: {fileID: 114035820112907108}
   - component: {fileID: 114402597791400576}
   - component: {fileID: 114022982218559818}
+  - component: {fileID: 114640767548997834}
   m_Layer: 5
   m_Name: MainMenuHUD
   m_TagString: Untagged
@@ -1004,6 +1005,7 @@ GameObject:
   - component: {fileID: 114465196088691926}
   - component: {fileID: 114705369143819094}
   - component: {fileID: 114968715679521266}
+  - component: {fileID: 114207445613721064}
   m_Layer: 5
   m_Name: MuteButton
   m_TagString: Untagged
@@ -2122,6 +2124,18 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+--- !u!114 &114207445613721064
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1772592582459018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dea8d402eca2c144a06f4b137ae92a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonText: {fileID: 114771347807129086}
 --- !u!114 &114208129461164706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3535,6 +3549,17 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+--- !u!114 &114640767548997834
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1710693039799794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ba779a58f6aee74b8c87e5fb5846d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114647313072035130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3889,12 +3914,34 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 114781345987235636}
+  m_TargetGraphic: {fileID: 114465196088691926}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 82591869597569808}
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 114640767548997834}
+        m_MethodName: toggleAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 114207445613721064}
+        m_MethodName: setButtonText
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5256,7 +5303,7 @@ Canvas:
   serializedVersion: 2
   m_RenderMode: 0
   m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 6
   m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0

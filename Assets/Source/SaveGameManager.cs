@@ -56,6 +56,60 @@ public class SaveGameManager : MonoBehaviour
             return 0;
         }
     }
+
+    // Save if audio is enabled
+    public static void saveIfAudioIsEnabled(bool status)
+    {
+        BinaryFormatter fileWriter = new BinaryFormatter();
+
+        // Create an instance of the OptionsData class
+        OptionsData optionsDataRef = new OptionsData();
+
+        // Create the save file
+        FileStream fileStream = new FileStream(Application.persistentDataPath + "/PlayerOptions.SAVE", FileMode.Create);
+
+        // Set the saved option
+        // Serialize the OptionsData class
+        optionsDataRef.isAudioEnabled = status;
+        fileWriter.Serialize(fileStream, optionsDataRef);
+
+        // Stop writing to the file
+        fileStream.Close();
+
+    }
+
+    // Get if audio is enabled
+    public static bool getIsAudioEnabled()
+    {
+        BinaryFormatter fileReader = new BinaryFormatter();
+        bool audioEnabledStatus = true;
+
+        // If the save file exists
+        if (File.Exists(Application.persistentDataPath + "/PlayerOptions.SAVE"))
+        {
+            // Open the file
+            FileStream fileStream = new FileStream(Application.persistentDataPath + "/PlayerOptions.SAVE", FileMode.Open);
+
+            // Deserialize the file
+            OptionsData optionsDataRef = (OptionsData)fileReader.Deserialize(fileStream);
+
+            // Return the saved option
+            audioEnabledStatus = optionsDataRef.isAudioEnabled;
+
+            // Stop reading the file
+            fileStream.Close();
+
+            return audioEnabledStatus;
+        }
+        // If the save file does not exist
+        else
+        {
+            print("Options Save File not found");
+            audioEnabledStatus = true;
+        }
+
+        return audioEnabledStatus;
+    }
 }
 
 // The level data
@@ -82,6 +136,21 @@ public class LevelData
     public void setSavedHighScore(int savedHighScore)
     {
         this.savedHighScore = savedHighScore;
+    }
+}
+
+// Player options data
+// Acts as a container for any options the player may have set
+[Serializable]
+public class OptionsData
+{
+    // Is audio enabled
+    public bool isAudioEnabled;
+
+    // Constructor
+    public OptionsData()
+    {
+
     }
 }
     
