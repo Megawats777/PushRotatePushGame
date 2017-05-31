@@ -183,19 +183,21 @@ public class Player : MonoBehaviour
             }
         }
       
-        if (Input.GetKeyDown(KeyCode.R))
+        // Debug commands that only work in the editor
+        if (Application.isEditor)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+
+            else if (Input.GetKeyDown(KeyCode.P))
+            {
+                setHighScore(0);
+                SaveGameManager.saveLevelHighScore(SceneManager.GetActiveScene().name, getHighScore());
+            }
+
         }
-
-        else if (Input.GetKeyDown(KeyCode.P))
-        {
-            setHighScore(0);
-            SaveGameManager.saveLevelHighScore(SceneManager.GetActiveScene().name, getHighScore());
-        }
-
-        
-
     }
 
     // Called before physics calculations
@@ -293,16 +295,13 @@ public class Player : MonoBehaviour
         if (currentRotationDirection == RotationDirections.Clockwise)
         {
             currentRotationDirection = RotationDirections.CounterClockwise;
-            print("Current rotation direction: " + currentRotationDirection.ToString());
         }
             
-
         // If the current rotation direction is counterclockwise
         // Set the current rotation direction to be clockwise
         else if (currentRotationDirection == RotationDirections.CounterClockwise)
         {
             currentRotationDirection = RotationDirections.Clockwise;
-            print("Current rotation direction: " + currentRotationDirection.ToString());
         }
             
     }
@@ -401,8 +400,11 @@ public class Player : MonoBehaviour
             // Add the combo score to the player's score
             increasePlayerScore(comboScore);
 
-            print("Combo Size: " + comboSize);
-            print("Combo Bonus: " + comboScore);
+            if (Application.isEditor)
+            {
+                print("Combo Size: " + comboSize);
+                print("Combo Bonus: " + comboScore);
+            }
 
             // Spawn a pop up text object
             // Set the content of the pop up text

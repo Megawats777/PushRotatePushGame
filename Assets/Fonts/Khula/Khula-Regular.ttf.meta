@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: dfccb3bda7558c043a5fac4edf0e70d5
+timeCreated: 1496245437
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Khula
+  fontNames:
+  - Khula
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: bd185f0266d02e0418d2b5fbd0a7315a, type: 3}
+  - {fileID: 12800000, guid: 2dd5a10525394cb459d9d16050919c49, type: 3}
+  - {fileID: 12800000, guid: 2b965f7855ba6e0448dc8e4772b5180e, type: 3}
+  - {fileID: 12800000, guid: be4105ac49b24ea45a388d2136c13a6f, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
