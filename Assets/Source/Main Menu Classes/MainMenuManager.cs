@@ -23,7 +23,7 @@ public class MainMenuManager : MonoBehaviour
     // Launch the game
     public void launchGame()
     {
-        SceneManager.LoadSceneAsync(levelToLaunch);
+        GetComponent<GlobalButtonActions>().loadLevel(levelToLaunch);
     }
 
     /*--Getters and Setters--*/

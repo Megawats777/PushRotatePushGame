@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
     public Vector3 respawnLocation;
 
     // Is input enabled
-    private bool isInputEnabled = true;
+    public bool isInputEnabled = true;
 
 
     /*--Child Object References--*/
