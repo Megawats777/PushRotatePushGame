@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 114094342167212558}
   - component: {fileID: 114539787270040972}
   - component: {fileID: 114128759979720024}
+  - component: {fileID: 95625804851607142}
   m_Layer: 0
   m_Name: Camera_MainMenu
   m_TagString: Untagged
@@ -97,6 +98,23 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1077892776089580}
   m_Enabled: 1
+--- !u!95 &95625804851607142
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1077892776089580}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c1258a81702747489265421861f2390, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114094342167212558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -163,7 +181,7 @@ MonoBehaviour:
         edgeSharpnessAmount: 8
         edgeDetectionThreshold: 0.125
         minimumRequiredLuminance: 0.05
-  m_Method: 0
+  m_Method: 1
 --- !u!114 &114244547298982134
 MonoBehaviour:
   m_ObjectHideFlags: 1
