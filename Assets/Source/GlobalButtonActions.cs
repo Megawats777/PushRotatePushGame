@@ -42,7 +42,18 @@ public class GlobalButtonActions : MonoBehaviour
             playerRef.isInputEnabled = false;
         }
 
-        yield return new WaitForSecondsRealtime(5.0f);
+        // Find a flash image in the scene
+        GameObject flashImage = GameObject.FindGameObjectWithTag("FlashImage");
+
+        // If the flash image exists
+        // Show the flash image
+        if (flashImage)
+        {
+            flashImage.GetComponent<Animator>().SetBool("isFadingOut", false);
+        }
+
+
+        yield return new WaitForSecondsRealtime(8.0f);
         SceneManager.LoadSceneAsync(name);
 
         // Set the time scale to 1

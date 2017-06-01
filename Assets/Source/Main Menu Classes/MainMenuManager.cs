@@ -5,13 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
+    // Reference to the flash image gameobject
+    [SerializeField]
+    private GameObject flashImage;
+
+    // Reference to the flash image animation controller
+    [SerializeField]
+    private Animator flashImageAnimController;
+
     // The level to launch
     private string levelToLaunch = string.Empty;
 
 	// Use this for initialization
 	void Start ()
     {
-		
+        flashImage.SetActive(true);
 	}
 	
 	// Update is called once per frame
@@ -23,7 +31,20 @@ public class MainMenuManager : MonoBehaviour
     // Launch the game
     public void launchGame()
     {
+        showFlashImage();
         GetComponent<GlobalButtonActions>().loadLevel(levelToLaunch);
+    }
+
+    // Show the flash image
+    private void showFlashImage()
+    {
+        flashImageAnimController.SetBool("isFadingOut", false);
+    }
+
+    // Hide the flash image
+    private void hideFlashImage()
+    {
+        flashImageAnimController.SetBool("isFadingOut", true);
     }
 
     /*--Getters and Setters--*/

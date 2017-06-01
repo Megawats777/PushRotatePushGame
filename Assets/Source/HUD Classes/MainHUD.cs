@@ -25,6 +25,9 @@ public class MainHUD : GameHUDBase
     [SerializeField]
     private Text moveControlText;
 
+    
+
+
     // External references
     private Player playerRef;
 
