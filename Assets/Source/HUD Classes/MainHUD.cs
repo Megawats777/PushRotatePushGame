@@ -25,7 +25,6 @@ public class MainHUD : GameHUDBase
     [SerializeField]
     private Text moveControlText;
 
-    
 
 
     // External references
@@ -35,7 +34,12 @@ public class MainHUD : GameHUDBase
     private void Awake()
     {
         playerRef = FindObjectOfType<Player>();
-        hudContentRoot.SetActive(true);
+    }
+
+    // Used for initialization
+    private void Start()
+    {
+        
     }
 
     // Called every frame

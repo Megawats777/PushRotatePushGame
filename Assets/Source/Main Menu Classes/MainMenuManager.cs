@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
+    // Reference to the loading text gameobject
+    [SerializeField]
+    private GameObject loadingText;
+
     // Reference to the flash image gameobject
     [SerializeField]
     private GameObject flashImage;
@@ -20,6 +24,7 @@ public class MainMenuManager : MonoBehaviour
 	void Start ()
     {
         flashImage.SetActive(true);
+        loadingText.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -32,6 +37,7 @@ public class MainMenuManager : MonoBehaviour
     public void launchGame()
     {
         showFlashImage();
+        loadingText.SetActive(true);
         GetComponent<GlobalButtonActions>().loadLevel(levelToLaunch);
     }
 
