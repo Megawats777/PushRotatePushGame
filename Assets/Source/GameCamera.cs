@@ -65,7 +65,7 @@ public class GameCamera : MonoBehaviour
         // If the player is on the low setting
         if (QualitySettings.GetQualityLevel() == 0)
         {
-            bloomComponent.settings.highQuality = false;
+            bloomComponent.settings.highQuality = true;
             ambientOcclusionComponent.enabled = false;
             antiAliasingComponent.enabled = false;
             dofComponent.settings.filteringQuality = DepthOfField.QualityPreset.Low;
@@ -74,7 +74,7 @@ public class GameCamera : MonoBehaviour
         // If the player is on the medium setting
         else if (QualitySettings.GetQualityLevel() == 1)
         {
-            bloomComponent.settings.highQuality = false;
+            bloomComponent.settings.highQuality = true;
             ambientOcclusionComponent.enabled = true;
             antiAliasingComponent.enabled = true;
             antiAliasingComponent.method = 1; // FXAA is used

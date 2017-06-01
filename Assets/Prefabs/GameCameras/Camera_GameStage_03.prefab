@@ -117,7 +117,7 @@ MonoBehaviour:
     highQuality: 1
     antiFlicker: 0
     dirtTexture: {fileID: 2800000, guid: a2960ffde020f27409e070d92fb2e00b, type: 3}
-    dirtIntensity: 2
+    dirtIntensity: 2.5
   m_Shader: {fileID: 4800000, guid: e45d4f28262b04d10a075856ab5fdb5e, type: 3}
 --- !u!114 &114149424927536376
 MonoBehaviour:
