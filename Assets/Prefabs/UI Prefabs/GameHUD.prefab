@@ -417,6 +417,7 @@ GameObject:
   - component: {fileID: 114311707565818430}
   - component: {fileID: 114554059672592080}
   - component: {fileID: 114231158540751650}
+  - component: {fileID: 114606036782630540}
   m_Layer: 5
   m_Name: GameHUD
   m_TagString: Untagged
@@ -494,7 +495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1556966809066408
 GameObject:
   m_ObjectHideFlags: 1
@@ -2207,6 +2208,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114606036782630540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1436848075262128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62826cb9812c5f940ab40170c0c05458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashImageGameObject: {fileID: 1516146394978338}
 --- !u!114 &114623194982328710
 MonoBehaviour:
   m_ObjectHideFlags: 1
