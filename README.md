@@ -6,5 +6,5 @@ When downloading this project reinstall the following components from the Unity 
 
 + Text Mesh Pro
 
-# Required Components:
-+ Unity 5.5.0 or greater
+# Required Tools:
++ Unity 2017.1 or greater
